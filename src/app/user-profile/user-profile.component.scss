@@ -1,0 +1,94 @@
+.user-profile {
+  display: flex;
+  float: right;
+  position: sticky;
+  top: 0px;
+}
+
+.profile-info {
+  width: 347px;
+  margin-right: 35px;
+  margin-top: 73px;
+}
+
+.your-info {
+  margin-left: -18px;
+}
+
+hr {
+  margin-bottom: 13px;
+}
+
+.profile-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+
+
+.title {
+  text-align: center;
+  padding-top: 25px;
+  color: rgb(218, 124, 124)
+}
+
+.favorite {
+  margin: 20px;
+  width: 225px;
+}
+
+.favorite-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+img {
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+.favorite-title {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+.remove-favorite {
+  display: flex;
+  justify-content: center;
+
+}
+
+.remove-button {
+  position: absolute;
+  bottom: 0;
+}
+
+button {
+  font-family: 'Michroma', sans-serif;
+  font-size: 11px;
+}
+
+@media only screen and (max-width: 1022px) {
+  .user-profile {
+    display: flex;
+    float: none;
+    justify-content: center;
+    position: static;
+  }
+
+  .profile-info {
+    justify-self: center;
+    margin-top: 23px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .favorite-cards {
+    display: flex;
+    justify-content: center;
+  }
+}

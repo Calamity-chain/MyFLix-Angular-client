@@ -1,0 +1,59 @@
+<app-nav-bar></app-nav-bar>
+<div class=background>
+
+<div class="all-movies" style="display: flex;">
+  <!-- 
+      *ngFor directive is used to display all returned movies and display them on their own card. The customfilter is used with the search pipe and search field above 
+    -->
+<mat-card *ngFor="let movie of movies; let i=index;" style="flex: 1 1 auto;">
+<mat-card-header>
+      <mat-card-title>{{movie.Title}}</mat-card-title>
+      <mat-card-subtitle>Directed by : {{movie.Director.Name}}</mat-card-subtitle>
+</mat-card-header>
+
+<img src={{movie.ImagePath}} alt="{{movie.Title}}" width="265px"/>
+
+<mat-card-actions>
+  <div class="genre">
+  Genre :
+  <button
+  mat-button
+  class="genre-button"
+  color="warn"
+  (click)="openGenreDialog(movie.Genre.Name, movie.Genre.Description)"
+  >{{movie.Genre.Name}}
+  </button>
+  </div>
+  <div class="director"> 
+    Directed by :
+  <button
+  mat-button
+  class="director-button"
+  color="warn"
+  (click)="openDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birth, movie.Director.Death)"
+  >{{movie.Director.Name}}
+  </button>
+  </div>
+  <div class="details">
+  <button
+  mat-raised-button
+  class="details-button"
+  color="white"
+  (click)="openMovieDialog(movie.Title, movie.ImagePath, movie.Description, movie.Director.Name, movie.Genre.Name)"
+  >Synopsis
+  </button>
+  </div>
+  <div class="favorite">
+  <button 
+  class="favorite-button"
+  mat-icon-button
+  color="warn"
+  aria-label="Add movies to favorites button"
+  (click)="addFavorite(movie._id, movie.Title)">
+  <mat-icon>favorite_border</mat-icon>
+  </button>
+</div>
+</mat-card-actions>
+</mat-card>
+</div>
+</div>
